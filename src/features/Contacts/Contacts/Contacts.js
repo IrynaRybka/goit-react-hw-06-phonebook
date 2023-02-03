@@ -12,7 +12,8 @@ export const ContactsPage = () => {
       {contacts.length > 0 && <h2 style={{textAlign: "center"}}>You have {contacts.length} contacts</h2>}
       <ContactFilter />
       <ContactsForm />
-      <ContactList />
+      {contacts.length > 0 && <ContactList />}
+      {contacts.length < 1 && <p style={{textAlign: "center", fontSize: '20px', }} >No contacts yet.</p>} 
     </>
   );
 };
