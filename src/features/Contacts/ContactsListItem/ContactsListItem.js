@@ -1,6 +1,9 @@
 import { deleteContact } from '../../store/Contacts.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import {selectNameContact} from '../../store/selectors';
+import css from './ContactsListItem.module.css';
+import { ImBin } from 'react-icons/im';
+
 
 export const ContactListItem = () => {
     const filteredContacts = useSelector(selectNameContact);
@@ -13,10 +16,10 @@ export const ContactListItem = () => {
     return (      
     <>
         {filteredContacts.map(contact => (
-          <li key={contact.id}>
-            <p>{contact.name}</p>
-          <p>{contact.phone}</p>
-         <button onClick={()=> onDeleteContact(contact.id)}>Delete contact</button>
+          <li className={css.contact_item} key={contact.id}>
+            <p className={css.contact_name}>{contact.name}</p>
+          <p className={css.contact_number}>{contact.phone}</p>
+         <button className={css.delete_button} onClick={()=> onDeleteContact(contact.id)}> <ImBin/></button>
           </li>
         ))}
      </> )

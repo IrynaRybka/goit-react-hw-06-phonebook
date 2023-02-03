@@ -50,7 +50,9 @@ export const ContactsForm = () => {
           Name
           <DebounceInput
           className={css.form_input}
-            minLength={1}
+          placeholder='Type 2-10 symbols'
+            minLength={2}
+            maxLength={10}
             debounceTimeout={1000}
             value={newName}
             onChange={e => setNewName(e.target.value)}
@@ -64,8 +66,10 @@ export const ContactsForm = () => {
         <label htmlFor="number">
           Number
           <DebounceInput
+          placeholder='Type 8 numbers'
            className={css.form_input}
-            minLength={1}
+            minLength={8}
+            maxLength={8}
             debounceTimeout={1000}
             value={number}
             onChange={e => setNumber(e.target.value)}
