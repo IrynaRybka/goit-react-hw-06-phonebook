@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {DebounceInput} from 'react-debounce-input';
-import { setFilterContact } from '../../store/Contacts.slice';
+import { setFilterContact } from '../../store/Filter.slice';
 import css from './ContactFilter.module.css';
 
 export const ContactFilter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.contacts.filter);
+  const filter = useSelector(state => state.filter.filter);
 
   const onFilterChange = name => {
     dispatch(setFilterContact(name));
