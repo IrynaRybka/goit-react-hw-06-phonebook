@@ -20,10 +20,7 @@ const contactsSlise = createSlice({
                 contacts: state.contacts.filter((contact) => contact.id !== action.payload,)
             }
         },
-        // setFilterContact: (state, action) => {
-        //   state.filter = action.payload;
-        // }
-    }
+     }
 })
 
 export const {addContact, deleteContact} = contactsSlise.actions;
