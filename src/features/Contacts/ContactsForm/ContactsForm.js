@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { DebounceInput } from 'react-debounce-input';
 
-// import { addContact } from '../../store/Contacts.slice';
-import { addContactsAsyncThunk } from 'features/store/contacts.thunk';
+import { addContact } from '../../store/Contacts.slice';
 
 import css from './ContactsForm.module.css';
 
@@ -30,7 +29,7 @@ export const ContactsForm = () => {
       });
       return false;
     }
-    dispatch(addContactsAsyncThunk(newContact));
+    dispatch(addContact(newContact));
     reset();
   };
 
@@ -67,10 +66,10 @@ export const ContactsForm = () => {
         <label htmlFor="number">
           Number
           <DebounceInput
-          placeholder='Type 6-20 numbers'
+          placeholder='Type 8 numbers'
            className={css.form_input}
-            minLength={6}
-            maxLength={20}
+            minLength={8}
+            maxLength={8}
             debounceTimeout={1000}
             value={number}
             onChange={e => setNumber(e.target.value)}
